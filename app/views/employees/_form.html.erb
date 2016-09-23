@@ -1,0 +1,18 @@
+<%= simple_form_for @employee, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@employee[:nombre]) %>
+  <%= f.input :apellido %>
+  <%= error_span(@employee[:apellido]) %>
+  <%= f.input :dni %>
+  <%= error_span(@employee[:dni]) %>
+  <%= f.input :correo %>
+  <%= error_span(@employee[:correo]) %>
+  <%= f.input :password %>
+  <%= error_span(@employee[:password]) %>
+  <%= f.input :admin %>
+  <%= error_span(@employee[:admin]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employees_path, :class => 'btn btn-default' %>
+<% end %>

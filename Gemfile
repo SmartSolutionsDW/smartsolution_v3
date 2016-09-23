@@ -50,12 +50,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
 
 # Bootstrap Frontend Framework Support
-#gem 'therubyracer'
-#gem 'less-rails'
-#gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
 
 # Simplified Form Management Support
-#gem 'simple_form'
+gem 'simple_form'
 
 
 #FIN

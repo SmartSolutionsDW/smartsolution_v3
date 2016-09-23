@@ -39,10 +39,10 @@
                   <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     
                     <% if @auth!= nil %>
-                      <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'img-circle') %>
+                      <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'img-responsive img-circle') %>
                       
                     <% else %>
-                      <%= current_user.nombre %>    <%= image_tag('profiles/user1_profile.jpg', :class =>'img-responsive img-circle') %>
+                      <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
                      
                     <% end %>
                   </a>
@@ -60,7 +60,7 @@
                 <li class="dropdown">
                   <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     
-                    <%= image_tag('profile-default.png', :class =>'img-responsive img-circle') %>
+                    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
                   </a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
