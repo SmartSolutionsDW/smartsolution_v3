@@ -122,4 +122,24 @@ footer{
   background-color: #f5f5f5;
 }
 
+/*
+.simple_form div.input[type='checkbox'] {
+  margin-bottom: 10px;
+}
+.simple_form div.boolean label {
+     float: none;
+    margin: 20px;
+    text-align: left;
+    
+}
+*/
+.simple_form div.boolean, .simple_form input[type='checkbox'] {
+     height: 20px;
+    /* margin: 0px 0px 0px; */
+    padding-bottom: 30px;
+}
+.form-horizontal .radio, .form-horizontal .checkbox {
+    min-height: 27px;
+    padding-left: 20px;
+}
 /****************************/
