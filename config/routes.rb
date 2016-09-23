@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/about_us'
+
+  get 'pages/faq'
+
+  get 'pages/tos'
+
+  get 'pages/contact_us'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :employees
   devise_for :users , :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :omniauth_authorize => 'users/omniauth_authorize' }
