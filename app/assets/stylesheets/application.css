@@ -12,8 +12,19 @@
  *
  *= require_tree .
  *= require_self
+ *= require font
  *= require bootstrap-material-design
  */
+ 
+html{
+    position: relative; 
+    min-height: 100%;
+}
+
+body{
+    margin: 0 0 65px;
+}    
+
 .navbar-default {
     background-color: #009587 !important;
     border-color: #009587 !important;
@@ -27,8 +38,6 @@
  .dropdown-submenu {
         position: relative;
         }
-
-
 
         .dropdown-submenu > .dropdown-menu {
         top: 0;
@@ -74,14 +83,16 @@
         border-radius: 6px 0 6px 6px;
         }
 
-
 .bs-docs-footer {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding:10px;
     margin-top: 100px;
     color: #99979c;
     text-align: center;
-    background-color: #2a2730;
+    background-color: #263238;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    height: 80px;
 }
 @media (min-width: 1024px){
 .bs-docs-footer {
@@ -108,15 +119,63 @@
     margin-left: auto;
 }
 
-footer{
-  display: block;
-    margin-top: 100px;
-      position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
+/* DEFAULT CSS */
 
-/****************************/
+/* Paddings */
+.large-padding{
+	padding:5px 10px;
+}
+.big-padding{
+	padding:2em;
+}
+.no-padding{
+	padding:0;
+}
+/* Margins */
+.no-margin{
+	margin:0;
+}
+.big-top-space{
+	margin-top:50px;
+}
+.top-space{
+	margin-top:1em;
+}
+.bottom-space{
+	margin-bottom:2em;
+}
+/* Alineamiento */
+.no-float{
+	float: none !important;
+}
+.in-top{
+	vertical-align:top !important;
+}
+.inline-block{
+	float: none !important;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right: -4px;
+}
+.absolute{
+	position:absolute;
+}
+/* Tamaños */
+.small{
+	font-size:12px;
+}
+.normal{
+	font-size: 1.2em;
+}
+.medium{
+	font-size:1.5em;
+}
+.big{
+	font-size:3em;
+}
+.bigger{
+	font-size:4em;
+}
+.ultra-big{
+	font-size:7em;
+}
