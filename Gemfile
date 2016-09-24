@@ -57,6 +57,9 @@ gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
 # Simplified Form Management Support
 gem 'simple_form'
 
+#MATERIAL DESIGN
+gem 'bootstrap-material-design'
+
 #FIN
 
 

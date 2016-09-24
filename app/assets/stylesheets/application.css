@@ -1,4 +1,3 @@
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-material-design
  */
 .navbar-default {
-    background-color: #dd4814 !important;
-    border-color: #bf3e11 !important;
+    background-color: #009587 !important;
+    border-color: #009587 !important;
 }
 .navbar-default .navbar-brand {
     color: #fff;

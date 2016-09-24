@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Karaoke</title>
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+   <link href="home.scss" rel="stylesheet"> 
    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
-     <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Latest compiled and minified CSS -->
     <%= yield :stylesheets %>
@@ -20,9 +22,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><i class="material-icons">queue_music</i>KARAOKE</a>
               <div class="navbar-collapse collapse navbar-responsive-collapse">
                  <ul class="nav navbar-nav">
+                  <a class="navbar-brand" href="/"><i class="fa fa-music" aria-hidden="true"></i> KaraokeBar</a>
                   <%= render 'layouts/menu' %>
                  </ul>
               </div>
@@ -32,25 +34,25 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'INICIO', root_path %></li>
+              <!--<li>< %= link_to 'INICIO', root_path %></li>-->
               <!--<li><a href="/home/testimonio">Testimonios</a></li>-->
              
               <% if current_user %>
                 <li class="dropdown">
                   <span class="hidden" id="userId"><%= current_user.id %></span>
-                   <span class="hidden" id="userId"><%= @auth.inspect %></span>
-                  <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    
+                  <span class="hidden" id="userId"><%= @auth.inspect %></span>
+                  <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <% if @auth!= nil %>
                       <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'img-responsive img-circle') %>
-                      
+                    <br>
+                    <br>
                     <% else %>
                       <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
                      
                     <% end %>
                   </a>
                   <ul class="dropdown-menu">
-                     <li><%= link_to 'Mi cuenta',edit_user_registration_path%></li>
+                       <li><%= link_to 'Mi cuenta',edit_user_registration_path%></li>
                      <!--<li>< %= link_to 'Mi cuenta', home_index_path %></li>-->
                      <!--<li>< %= link_to 'Perfil',edit_user_registration_path%></li>-->
                      <% if current_user.admin == true %>
@@ -83,7 +85,7 @@
 
       
        <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %> alert-dismissable">
+          <div class="alert alert-success text-center <%= key %> alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
           <%= value %>
           </div>
