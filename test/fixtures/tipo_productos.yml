@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Co_TipoProducto: MyString
+  No_CoTipoProducto: MyString
+
+two:
+  Co_TipoProducto: MyString
+  No_CoTipoProducto: MyString

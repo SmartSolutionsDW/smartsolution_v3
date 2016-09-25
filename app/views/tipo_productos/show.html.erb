@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Co tipoproducto:</strong>
+  <%= @tipo_producto.Co_TipoProducto %>
+</p>
+
+<p>
+  <strong>No cotipoproducto:</strong>
+  <%= @tipo_producto.No_CoTipoProducto %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_producto_path(@tipo_producto) %> |
+<%= link_to 'Back', tipo_productos_path %>

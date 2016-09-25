@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tipo_productos
   get 'pages/index'
 
   get 'pages/about_us'
