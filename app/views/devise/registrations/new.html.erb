@@ -2,48 +2,74 @@
   <div class="row">
     <div class='col-md-4  col-sm-offset-4'>
       <div class="panel panel-primary">
-        <div class="panel-heading">Regístrate</div>
-        <div class="panel-body">
-
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name),htm: { method: :put }) do |f| %>
+        <div class="panel-heading kostic medium">Regístrate</div>
+          <div class="panel-body">
+  
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name),htm: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
-            
-              <div class="field">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, class: "form-control", :placeholder =>'Correo', autofocus: true  %>
+  
+              <div class="form-group">
+  							<%= f.label :email %><br />
+  							<div class="cols-sm-10">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+  									<%= f.email_field :email, class: "form-control", :placeholder =>'Correo', autofocus: true  %>
+  								</div>
+  							</div>
+  						</div>
+  	
+  						<div class="form-group">
+  							<%= f.label :nombre %><br />
+  							<div class="cols-sm-10">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+  									<%= f.text_field :nombre, class: "form-control", :placeholder =>'Nombres'  %>
+  								</div>
+  							</div>
+  						</div>
+              
+              <div class="form-group">
+  							<%= f.label :apellido %><br />
+  							<div class="cols-sm-10">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+  									<%= f.text_field :apellido, class: "form-control", :placeholder =>'Apellidos' %>
+  								</div>
+  							</div>
+  						</div>
+              
+              <div class="form-group">
+              		<%= f.label :password %>
+              		<% if @minimum_password_length %>
+              		<em>(<%= @minimum_password_length %> characters minimum)</em>
+              		<% end %><br />
+              		<div class="cols-sm-10">
+              			<div class="input-group">
+              				<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+              				<%= f.password_field :password, autocomplete: "off" %>
+              			</div>
+              		</div>
               </div>
-              <div class="field">
-                <%= f.label :nombre %><br />
-                <%= f.text_field :nombre, class: "form-control", :placeholder =>'Nombres'  %>
-              </div>
-              <div class="field">
-                <%= f.label :apellido %><br />
-                <%= f.text_field :apellido, class: "form-control", :placeholder =>'Apellidos' %>
-              </div>
-            
-              <div class="field">
-                <%= f.label :password %>
-                <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
-                <%= f.password_field :password, autocomplete: "off" %>
-              </div>
-            
-              <div class="field">
-                <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "off" %>
-              </div>
-            
+              
+              <div class="form-group">
+            		<%= f.label :password_confirmation %><br />
+            		<div class="cols-sm-10">
+            			<div class="input-group">
+            				<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            				<%= f.password_field :password_confirmation, autocomplete: "off" %>
+            			</div>
+            		</div>
+            	</div>
+              
               <div class="actions">
                 <%= f.submit "Registrarse" %>
               </div>
-            <% end %>
-        </div>
-        <div class="panel-footer">
-          <%= render "devise/shared/links" %>
-        </div>
+              <% end %>
+          </div>
+          <div class="panel-footer">
+            <%= render "devise/shared/links" %>
+          </div>
       </div>
     </div>
   </div>
 </div>
-
