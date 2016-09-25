@@ -117,10 +117,6 @@ body{
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    justify-content:center;
-    display:inline-block;
-    display: flex;
-    align-items: center;
 }
 
 /* DEFAULT CSS */
