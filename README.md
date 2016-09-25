@@ -9,7 +9,7 @@
 La orientación al cliente y nuestra filosofía de soporte continuo genera un acompañamiento directo a nuestros clientes, buscamos aplicar los estándares y mejores prácticas de la industria e innovar constantemente nuestros procesos y entrega de servicios para brindarles la mejor relación costo/beneficio.</p>
 
 <h1>PROYECTO KARAOKE-BAR</h1> 
-<p>Estamos desarrollando una plataforma que permita realizar funciones utiles para un Karaoke, el cual permitirá una mejor interacción con losa clientes. </p>
+<p>Estamos desarrollando una plataforma que permita realizar funciones utiles para un Karaoke y así brindar una mejor interacción con losa clientes. </p>
 
 
 
