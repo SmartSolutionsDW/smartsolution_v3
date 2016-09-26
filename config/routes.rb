@@ -10,11 +10,23 @@ Rails.application.routes.draw do
   get 'pages/contact_us'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   resources :employees
+  
   devise_for :users , :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :omniauth_authorize => 'users/omniauth_authorize' }
   
   get 'home/index'
   root 'home#index'
+  begin 
+    get "/intranet", to: 'intranet#intranet', as: 'intranet' 
+    get "/intranet/login", to: 'intranet#login', as: 'login' 
+    post "/intranet/sesion", to: 'intranet#intento_sesion', as: 'session'
+  end
+  
+  
+  #get '/intranet', to: 'intranet#login', as: 'login'
+  #match ':controller(/:action(/:id))', :via => [:get, :post]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

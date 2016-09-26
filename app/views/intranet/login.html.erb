@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class='col-md-8 '>
+      <div class="panel panel-primary">
+         <div class="panel-heading">Iniciar Sesión</div>
+         <div class="panel-body">
+             
+            <%= form_tag(:action => 'intento_sesion') do %>
+                <%= label_tag(:dni) %>
+                <%= text_field_tag(:dni) %>
+                </br>
+                <%= label_tag(:password) %>
+                <%= text_field_tag(:password) %>
+                </br>
+                <%=submit_tag 'session' %>
+            <% end %>
+            
+             <%= simple_form_for  @intranet,:action => 'login', :html => { :class => 'form-horizontal' } do |f| %>
+                <%= f.input :dni  %>
+                <%= error_span( @intranet[:dni]) %>
+                <%= f.input :password  %>
+                <%= error_span( @intranet[:password]) %>
+                <%= f.button :submit, :class => 'btn-primary' %>
+               </div>
+              <% end %>
+              
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
