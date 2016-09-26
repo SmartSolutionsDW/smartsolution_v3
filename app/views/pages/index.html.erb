@@ -1,2 +1,23 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1 class="kostic"><i class="fa fa-cogs" aria-hidden="true"></i>
+Mantenimientos KaraokeBar</h1>
+   <!--Menu2 Sidebar-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+            <div class="page-header">
+              <h1><%= yield :header_title %> <small><%= yield :header_sub_title %></small>
+            </h1>
+           </div>
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3 class="kostic">Menú Mantenimientos</h3>
+            <ul class="nav nav-list">
+                <%= render 'layouts/menu1' %>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+

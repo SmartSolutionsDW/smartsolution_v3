@@ -1,0 +1,10 @@
+<%= simple_form_for @tipo_producto, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :Co_TipoProducto %>
+  <%= error_span(@tipo_producto[:Co_TipoProducto]) %>
+  <%= f.input :co_coTipoProducto %>
+  <%= error_span(@tipo_producto[:co_coTipoProducto]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tipo_productos_path, :class => 'btn btn-default' %>
+<% end %>

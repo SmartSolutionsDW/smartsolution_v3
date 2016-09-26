@@ -1,0 +1,16 @@
+<%= simple_form_for @producto, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :Co_Producto %>
+  <%= error_span(@producto[:Co_Producto]) %>
+  <%= f.input :No_Producto %>
+  <%= error_span(@producto[:No_Producto]) %>
+  <%= f.input :Ss_Precio %>
+  <%= error_span(@producto[:Ss_Precio]) %>
+  <%= f.input :Ct_Stock %>
+  <%= error_span(@producto[:Ct_Stock]) %>
+  <%= f.association :tipo_producto %> 
+   <%= error_span(@producto[:tipo_producto]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                productos_path, :class => 'btn btn-default' %>
+<% end %>

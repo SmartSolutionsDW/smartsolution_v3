@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :productos
+  resources :tipo_productos
   get 'pages/index'
 
   get 'pages/about_us'
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
+  
+  get 'tipo_productos/new'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
