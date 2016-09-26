@@ -7,8 +7,8 @@
   <%= error_span(@producto[:Ss_Precio]) %>
   <%= f.input :Ct_Stock %>
   <%= error_span(@producto[:Ct_Stock]) %>
-  <%= f.input :tipo_producto_id %>
-  <%= error_span(@producto[:tipo_producto_id]) %>
+  <%= f.association :tipo_producto %> 
+   <%= error_span(@producto[:tipo_producto]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
