@@ -13,7 +13,12 @@ Rails.application.routes.draw do
 
   get 'pages/contact_us'
   
+  #MANTENIMIENTOS
+  get 'productos/new'
   get 'tipo_productos/new'
+  get 'salas/new'
+  get 'eventos/new'
+  get 'locales/new'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
