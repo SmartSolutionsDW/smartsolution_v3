@@ -69,6 +69,6 @@ class TipoProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tipo_producto_params
-      params.require(:tipo_producto).permit(:Co_TipoProducto, :No_CoTipoProducto)
+      params.require(:tipo_producto).permit(:Co_TipoProducto, :co_coTipoProducto)
     end
 end

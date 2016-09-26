@@ -2,8 +2,8 @@
 
 one:
   Co_TipoProducto: MyString
-  No_CoTipoProducto: MyString
+  co_coTipoProducto: MyString
 
 two:
   Co_TipoProducto: MyString
-  No_CoTipoProducto: MyString
+  co_coTipoProducto: MyString

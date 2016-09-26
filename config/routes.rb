@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
   resources :tipo_productos
   get 'pages/index'
 
