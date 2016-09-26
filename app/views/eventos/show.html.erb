@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Co evento:</strong>
+  <%= @evento.co_evento %>
+</p>
+
+<p>
+  <strong>Co local:</strong>
+  <%= @evento.co_local %>
+</p>
+
+<p>
+  <strong>Fe evento:</strong>
+  <%= @evento.fe_evento %>
+</p>
+
+<p>
+  <strong>Qt capacidad:</strong>
+  <%= @evento.qt_capacidad %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @evento.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>
