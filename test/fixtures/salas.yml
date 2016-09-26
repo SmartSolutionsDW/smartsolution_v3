@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  co_sala: 1
+  co_local: 1
+  no_sala: 1
+  qt_capacidad: 1
+  description: MyText
+
+two:
+  co_sala: 1
+  co_local: 1
+  no_sala: 1
+  qt_capacidad: 1
+  description: MyText

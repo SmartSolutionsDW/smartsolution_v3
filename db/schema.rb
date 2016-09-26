@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926054943) do
+ActiveRecord::Schema.define(version: 20160926200647) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160926054943) do
 
   add_index "employees", ["dni"], name: "index_employees_on_dni", unique: true, using: :btree
 
+  create_table "eventos", force: :cascade do |t|
+    t.integer  "co_evento",    limit: 4
+    t.integer  "co_local",     limit: 4
+    t.date     "fe_evento"
+    t.integer  "qt_capacidad", limit: 4
+    t.text     "descripcion",  limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "productos", force: :cascade do |t|
     t.string   "Co_Producto",      limit: 255
     t.string   "No_Producto",      limit: 255
@@ -37,6 +47,16 @@ ActiveRecord::Schema.define(version: 20160926054943) do
   end
 
   add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree
+
+  create_table "salas", force: :cascade do |t|
+    t.integer  "co_sala",      limit: 4
+    t.integer  "co_local",     limit: 4
+    t.integer  "no_sala",      limit: 4
+    t.integer  "qt_capacidad", limit: 4
+    t.text     "description",  limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "tipo_productos", force: :cascade do |t|
     t.string   "Co_TipoProducto",   limit: 255

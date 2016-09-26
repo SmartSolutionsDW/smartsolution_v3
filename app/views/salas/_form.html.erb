@@ -1,0 +1,16 @@
+<%= simple_form_for @sala, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :co_sala %>
+  <%= error_span(@sala[:co_sala]) %>
+  <%= f.input :co_local %>
+  <%= error_span(@sala[:co_local]) %>
+  <%= f.input :no_sala %>
+  <%= error_span(@sala[:no_sala]) %>
+  <%= f.input :qt_capacidad %>
+  <%= error_span(@sala[:qt_capacidad]) %>
+  <%= f.input :description %>
+  <%= error_span(@sala[:description]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                salas_path, :class => 'btn btn-default' %>
+<% end %>

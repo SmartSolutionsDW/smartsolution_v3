@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  resources :eventos
+  resources :salas
+  resources :productos
+  resources :tipo_productos
+>>>>>>> 13c7c286502f2f5ec11d1b80ee59c46449728194
   get 'pages/index'
 
   get 'pages/about_us'
@@ -8,6 +15,16 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
+<<<<<<< HEAD
+=======
+  
+  #MANTENIMIENTOS
+  get 'productos/new'
+  get 'tipo_productos/new'
+  get 'salas/new'
+  get 'eventos/new'
+  get 'locales/new'
+>>>>>>> 13c7c286502f2f5ec11d1b80ee59c46449728194
 
   get 'tipo_productos/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
