@@ -18,30 +18,23 @@ class IntranetController < ApplicationController
    end
     
    def intento_sesion
-    logger.debug "<<<<<intento_sesion 1111>>>>> "
-    a=params[:dni]
-    logger.debug "<<<<<intento_sesion 1111 #{a}>>>>> "
-    @employee=Employee.find_by(dni: params[:dni], password: params[:password] )
-   logger.debug "<<<<<login 1111>>>>>#{@employee.inspect}"
-   if @employee != nil
-    
-      render action: "intranet"
-      
-   else
-        redirect_to login_path
-   end
+        logger.debug "<<<<<intento_sesion 1111>>>>> "
+        a=params[:dni]
+        logger.debug "<<<<<intento_sesion 1111 #{a}>>>>> "
+        @employee=Employee.find_by(dni: params[:dni], password: params[:password] )
+       logger.debug "<<<<<login 1111>>>>>#{@employee.inspect}"
+       if @employee != nil
+        
+          render action: "intranet"
+          
+       else
+            redirect_to login_path
+       end
    
-    
-    
-    
-      # found_user = Employees.where(:dni => params[:dni] )
-     
-    
-      
-      
    end
    
    def sesion
+       
    end
    
    def employee_params

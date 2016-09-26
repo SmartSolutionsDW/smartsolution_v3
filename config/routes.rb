@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :productos
-  resources :tipo_productos
   get 'pages/index'
 
   get 'pages/about_us'
@@ -10,9 +8,8 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
-  
-  get 'tipo_productos/new'
 
+  get 'tipo_productos/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   resources :employees
@@ -24,7 +21,7 @@ Rails.application.routes.draw do
   begin 
     get "/intranet", to: 'intranet#intranet', as: 'intranet' 
     get "/intranet/login", to: 'intranet#login', as: 'login' 
-    post "/intranet/sesion", to: 'intranet#intento_sesion', as: 'session'
+    post "/intranet/intento_sesion", to: 'intranet#intento_sesion', as: 'intento_sesion'
   end
   
   
