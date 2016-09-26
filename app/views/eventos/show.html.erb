@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Evento -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Co evento:</strong>
-  <%= @evento.co_evento %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:co_evento) %>:</strong></dt>
+  <dd><%= @evento.co_evento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:co_local) %>:</strong></dt>
+  <dd><%= @evento.co_local %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fe_evento) %>:</strong></dt>
+  <dd><%= @evento.fe_evento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qt_capacidad) %>:</strong></dt>
+  <dd><%= @evento.qt_capacidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @evento.descripcion %></dd>
+</dl>
 
-<p>
-  <strong>Co local:</strong>
-  <%= @evento.co_local %>
-</p>
-
-<p>
-  <strong>Fe evento:</strong>
-  <%= @evento.fe_evento %>
-</p>
-
-<p>
-  <strong>Qt capacidad:</strong>
-  <%= @evento.qt_capacidad %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @evento.descripcion %>
-</p>
-
-<%= link_to 'Edit', edit_evento_path(@evento) %> |
-<%= link_to 'Back', eventos_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              eventos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_evento_path(@evento), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              evento_path(@evento),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,15 +1,16 @@
-<%= simple_form_for(@evento) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @evento, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :co_evento %>
+  <%= error_span(@evento[:co_evento]) %>
+  <%= f.input :co_local %>
+  <%= error_span(@evento[:co_local]) %>
+  <%= f.input :fe_evento %>
+  <%= error_span(@evento[:fe_evento]) %>
+  <%= f.input :qt_capacidad %>
+  <%= error_span(@evento[:qt_capacidad]) %>
+  <%= f.input :descripcion %>
+  <%= error_span(@evento[:descripcion]) %>
 
-  <div class="form-inputs">
-    <%= f.input :co_evento %>
-    <%= f.input :co_local %>
-    <%= f.input :fe_evento %>
-    <%= f.input :qt_capacidad %>
-    <%= f.input :descripcion %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                eventos_path, :class => 'btn btn-default' %>
 <% end %>
