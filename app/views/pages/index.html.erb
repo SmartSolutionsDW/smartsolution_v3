@@ -1,5 +1,25 @@
-<h1>Intranet KaraokeBar!</h1>
+<h1>Mantenimientos KaraokeBar!</h1>
 <p>Find me in app/views/pages/index.html.erb</p>
-<center><%= image_tag "Karaoke1.jpg" %></center>
-<br>
-<br>
+   
+   <!--Menu2 Sidebar-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+            <div class="page-header">
+              <h1><%= yield :header_title %> <small><%= yield :header_sub_title %></small>
+            </h1>
+           </div>
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3>karaokeBar</h3>
+            <ul class="nav nav-list">
+              <li class="nav-header">Menu</li>
+                <%= render 'layouts/menu1' %>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+

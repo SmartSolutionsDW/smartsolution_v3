@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
+  
+  get 'tipo_productos/new'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :employees
