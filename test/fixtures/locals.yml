@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  No_Local: MyString
+  No_Direccion: MyString
+  Nu_Telefono: MyString
+  Tx_Correo: MyString
+
+two:
+  No_Local: MyString
+  No_Direccion: MyString
+  Nu_Telefono: MyString
+  Tx_Correo: MyString

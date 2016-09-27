@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :reservas
+  resources :locals
+
   resources :eventos
   resources :salas
   resources :productos
   resources :tipo_productos
+
   
   get 'pages/index'
 
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact_us'
 
+  
     
   #MANTENIMIENTOS
   get 'productos/new'
