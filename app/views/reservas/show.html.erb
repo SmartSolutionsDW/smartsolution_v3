@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Co reserva:</strong>
+  <%= @reserva.co_reserva %>
+</p>
+
+<p>
+  <strong>Co sala:</strong>
+  <%= @reserva.co_sala %>
+</p>
+
+<p>
+  <strong>No dni:</strong>
+  <%= @reserva.no_dni %>
+</p>
+
+<p>
+  <strong>Fe reserva:</strong>
+  <%= @reserva.fe_reserva %>
+</p>
+
+<p>
+  <strong>Tx description:</strong>
+  <%= @reserva.tx_Description %>
+</p>
+
+<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
+<%= link_to 'Back', reservas_path %>

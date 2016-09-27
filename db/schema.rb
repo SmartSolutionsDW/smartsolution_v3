@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927050534) do
+ActiveRecord::Schema.define(version: 20160927145956) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20160927050534) do
   end
 
   add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree
+
+  create_table "reservas", force: :cascade do |t|
+    t.integer  "co_reserva",     limit: 4
+    t.integer  "co_sala",        limit: 4
+    t.string   "no_dni",         limit: 255
+    t.date     "fe_reserva"
+    t.text     "tx_Description", limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "salas", force: :cascade do |t|
     t.integer  "co_sala",      limit: 4

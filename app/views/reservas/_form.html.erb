@@ -1,0 +1,15 @@
+<%= simple_form_for(@reserva) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :co_reserva %>
+    <%= f.input :co_sala %>
+    <%= f.input :no_dni %>
+    <%= f.input :fe_reserva %>
+    <%= f.input :tx_Description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
