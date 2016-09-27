@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926200647) do
+ActiveRecord::Schema.define(version: 20160927050534) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20160926200647) do
     t.text     "descripcion",  limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "locals", force: :cascade do |t|
+    t.string   "No_Local",     limit: 255
+    t.string   "No_Direccion", limit: 255
+    t.string   "Nu_Telefono",  limit: 255
+    t.string   "Tx_Correo",    limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "productos", force: :cascade do |t|

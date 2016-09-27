@@ -1,0 +1,25 @@
+<%- model_class = Local -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:No_Local) %>:</strong></dt>
+  <dd><%= @local.No_Local %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:No_Direccion) %>:</strong></dt>
+  <dd><%= @local.No_Direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Nu_Telefono) %>:</strong></dt>
+  <dd><%= @local.Nu_Telefono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Tx_Correo) %>:</strong></dt>
+  <dd><%= @local.Tx_Correo %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              locals_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_local_path(@local), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              local_path(@local),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

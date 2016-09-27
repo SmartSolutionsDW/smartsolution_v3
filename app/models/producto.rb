@@ -3,6 +3,5 @@ class Producto < ActiveRecord::Base
   include Loggable 
   def nombre_producto    
     self.tipo_producto.co_coTipoProducto  
-   end
-   
+  end
 end

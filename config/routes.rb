@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locals
   resources :eventos
   resources :salas
   resources :productos
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   get 'tipo_productos/new'
   get 'salas/new'
   get 'eventos/new'
-  get 'locales/new'
+  get 'locals/new'
 
   get 'tipo_productos/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

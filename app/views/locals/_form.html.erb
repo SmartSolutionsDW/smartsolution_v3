@@ -1,0 +1,14 @@
+<%= simple_form_for @local, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :No_Local %>
+  <%= error_span(@local[:No_Local]) %>
+  <%= f.input :No_Direccion %>
+  <%= error_span(@local[:No_Direccion]) %>
+  <%= f.input :Nu_Telefono %>
+  <%= error_span(@local[:Nu_Telefono]) %>
+  <%= f.input :Tx_Correo %>
+  <%= error_span(@local[:Tx_Correo]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                locals_path, :class => 'btn btn-default' %>
+<% end %>
