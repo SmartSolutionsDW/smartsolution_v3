@@ -1,7 +1,12 @@
 RailsAdmin.config do |config|
 
-  ### Popular gems integration
-
+  ### Popular gems 
+  ## solo los administradores pueden ingresar desde la tabla users de mysql
+  config.authorize_with do
+    redirect_to main_app.root_path unless warden.user.admin == true
+      
+    
+  end
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user

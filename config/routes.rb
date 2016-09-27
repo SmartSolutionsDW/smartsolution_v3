@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-=======
   resources :eventos
   resources :salas
   resources :productos
   resources :tipo_productos
->>>>>>> 13c7c286502f2f5ec11d1b80ee59c46449728194
+  
   get 'pages/index'
 
   get 'pages/about_us'
@@ -15,17 +13,16 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
-<<<<<<< HEAD
-=======
-  
+
+    
   #MANTENIMIENTOS
   get 'productos/new'
   get 'tipo_productos/new'
   get 'salas/new'
   get 'eventos/new'
-  get 'locales/new'
->>>>>>> 13c7c286502f2f5ec11d1b80ee59c46449728194
-
+  get 'locals/new'
+  
+  
   get 'tipo_productos/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -36,14 +33,16 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
   begin 
-    get "/intranet", to: 'intranet#intranet', as: 'intranet' 
+    get "/intranet/intranet", to: 'intranet#intranet', as: 'intranet' 
     get "/intranet/login", to: 'intranet#login', as: 'login' 
     post "/intranet/intento_sesion", to: 'intranet#intento_sesion', as: 'intento_sesion'
+    delete "/intranet/cerrar_sesion", to: 'intranet#cerrar_sesion', as: 'cerrar_sesion'
+    
   end
   
   
   #get '/intranet', to: 'intranet#login', as: 'login'
-  #match ':controller(/:action(/:id))', :via => [:get, :post]
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

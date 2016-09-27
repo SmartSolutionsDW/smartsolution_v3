@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || stored_location_for(resource) || pages_index_path
   end
   #
+  
+  
   protected
 
   def configure_permitted_parameters
@@ -16,5 +18,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :encrypted_password, :reset_password_token, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :created_at, :updated_at, :admin, :nombre, :apellido, :dni, :uid, :provider])
    
   end
+
   
 end

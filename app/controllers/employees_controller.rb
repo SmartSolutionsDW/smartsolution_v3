@@ -1,9 +1,10 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy]
-
+  before_action :index, :validar_admin,:set_employee, only: [:show, :edit, :update, :destroy] 
+  
   # GET /employees
   # GET /employees.json
   def index
+    self.validar_admin
     @employees = Employee.all
   end
 
@@ -54,13 +55,43 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   # DELETE /employees/1.json
   def destroy
-    @employee.destroy
-    respond_to do |format|
-      format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
-      format.json { head :no_content }
+    #@employee.destroy
+    logger.debug "<<<<< eliminando empleado >>>>>"
+    if(@employee['id']!=3)
+      @employee.destroy
+      respond_to do |format|
+        format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+        respond_to do |format|
+          format.html { redirect_to employees_url, alert: 'El empleado no va ser eliminado porque es el administrador.' }
+          
+          format.json { render json: "sere", status: :unprocessable_entity }
+        end
+      
     end
+  
+    
   end
 
+
+   def validar_admin
+      
+       
+       logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
+       if(session[:intranet]!=nil)
+         
+         @employee=session[:intranet]
+          if(session[:intranet]['admin']==false)
+            redirect_to intranet_path
+          end
+       else
+          redirect_to intranet_path   
+       end
+      
+   end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
@@ -71,4 +102,6 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:nombre, :apellido, :dni, :correo, :password, :admin)
     end
+    
+   
 end

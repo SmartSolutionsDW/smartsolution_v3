@@ -1,11 +1,13 @@
 class HomeController < ApplicationController
-    before_action  :set_auth
+  before_action  :set_auth
+  
   def index
   end
+  
   def profile
   end
   
-   private
+  private
       
       
   def set_auth

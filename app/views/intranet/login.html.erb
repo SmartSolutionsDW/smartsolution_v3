@@ -10,19 +10,12 @@
                 <%= text_field_tag(:dni) %>
                 </br>
                 <%= label_tag(:password) %>
-                <%= text_field_tag(:password) %>
+                <%= password_field_tag(:password) %>
                 </br>
                 <%=submit_tag 'session' %>
             <% end %>
             
-             <%= simple_form_for  @intranet,:action => 'login', :html => { :class => 'form-horizontal' } do |f| %>
-                <%= f.input :dni  %>
-                <%= error_span( @intranet[:dni]) %>
-                <%= f.input :password  %>
-                <%= error_span( @intranet[:password]) %>
-                <%= f.button :submit, :class => 'btn-primary' %>
-               </div>
-              <% end %>
+           
               
          </div>
       </div>
