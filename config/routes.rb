@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  resources :eventos
   resources :salas
   resources :administrator_locals
   resources :reservas
   resources :locals
 
-  resources :eventos
   resources :productos
   resources :tipo_productos
 

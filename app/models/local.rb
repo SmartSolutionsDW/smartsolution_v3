@@ -1,5 +1,6 @@
 class Local < ActiveRecord::Base
     has_many :sala 
+    has_many :evento
      #attr_accessible :id, :descripcion
      
 

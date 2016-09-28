@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  co_evento: 1
-  co_local: 1
-  fe_evento: 2016-09-26
-  qt_capacidad: 1
-  descripcion: MyText
+  local_id: 
+  fe_evento: 2016-09-28 15:49:59
+  capacidad: 1
+  descripcion: MyString
 
 two:
-  co_evento: 1
-  co_local: 1
-  fe_evento: 2016-09-26
-  qt_capacidad: 1
-  descripcion: MyText
+  local_id: 
+  fe_evento: 2016-09-28 15:49:59
+  capacidad: 1
+  descripcion: MyString

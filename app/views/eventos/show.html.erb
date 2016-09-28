@@ -4,14 +4,12 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:co_evento) %>:</strong></dt>
-  <dd><%= @evento.co_evento %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:co_local) %>:</strong></dt>
-  <dd><%= @evento.co_local %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:local_id) %>:</strong></dt>
+  <dd><%= @evento.local_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fe_evento) %>:</strong></dt>
   <dd><%= @evento.fe_evento %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:qt_capacidad) %>:</strong></dt>
-  <dd><%= @evento.qt_capacidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:capacidad) %>:</strong></dt>
+  <dd><%= @evento.capacidad %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @evento.descripcion %></dd>
 </dl>

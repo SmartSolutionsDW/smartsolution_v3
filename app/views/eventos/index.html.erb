@@ -6,10 +6,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:co_evento) %></th>
-      <th><%= model_class.human_attribute_name(:co_local) %></th>
+      <th><%= model_class.human_attribute_name(:local_id) %></th>
       <th><%= model_class.human_attribute_name(:fe_evento) %></th>
-      <th><%= model_class.human_attribute_name(:qt_capacidad) %></th>
+      <th><%= model_class.human_attribute_name(:capacidad) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -19,10 +18,9 @@
     <% @eventos.each do |evento| %>
       <tr>
         <td><%= link_to evento.id, evento_path(evento) %></td>
-        <td><%= evento.co_evento %></td>
-        <td><%= evento.co_local %></td>
+        <td><%= evento.local_name %></td>
         <td><%= evento.fe_evento %></td>
-        <td><%= evento.qt_capacidad %></td>
+        <td><%= evento.capacidad %></td>
         <td><%= evento.descripcion %></td>
         <td><%=l evento.created_at %></td>
         <td>

@@ -1,11 +1,10 @@
 class CreateEventos < ActiveRecord::Migration
   def change
     create_table :eventos do |t|
-      t.integer :co_evento
-      t.integer :co_local
-      t.date :fe_evento
-      t.integer :qt_capacidad
-      t.text :descripcion
+      t.references :local, index: true, foreign_key: true
+      t.datetime :fe_evento
+      t.integer :capacidad
+      t.string :descripcion
 
       t.timestamps null: false
     end

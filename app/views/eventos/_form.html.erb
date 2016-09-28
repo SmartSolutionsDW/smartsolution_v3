@@ -1,12 +1,11 @@
 <%= simple_form_for @evento, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :co_evento %>
-  <%= error_span(@evento[:co_evento]) %>
-  <%= f.input :co_local %>
-  <%= error_span(@evento[:co_local]) %>
+  <%= f.association :local, label_method: :No_Local, value_method: :id, include_blank: false %>
+  <%= error_span(@evento[:local]) %>
+  
   <%= f.input :fe_evento %>
   <%= error_span(@evento[:fe_evento]) %>
-  <%= f.input :qt_capacidad %>
-  <%= error_span(@evento[:qt_capacidad]) %>
+  <%= f.input :capacidad %>
+  <%= error_span(@evento[:capacidad]) %>
   <%= f.input :descripcion %>
   <%= error_span(@evento[:descripcion]) %>
 
