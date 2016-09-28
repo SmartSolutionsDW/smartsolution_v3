@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928154959) do
+ActiveRecord::Schema.define(version: 20160928161700) do
 
   create_table "administrator_locals", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
@@ -70,14 +70,18 @@ ActiveRecord::Schema.define(version: 20160928154959) do
   add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree
 
   create_table "reservas", force: :cascade do |t|
-    t.integer  "co_reserva",     limit: 4
-    t.integer  "co_sala",        limit: 4
-    t.string   "no_dni",         limit: 255
-    t.date     "fe_reserva"
-    t.text     "tx_Description", limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "sala_id",     limit: 4
+    t.integer  "user_id",     limit: 4
+    t.datetime "fe_reserva"
+    t.string   "descripcion", limit: 255
+    t.string   "estado",      limit: 1
+    t.boolean  "aprobado"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
+
+  add_index "reservas", ["sala_id"], name: "index_reservas_on_sala_id", using: :btree
+  add_index "reservas", ["user_id"], name: "index_reservas_on_user_id", using: :btree
 
   create_table "salas", force: :cascade do |t|
     t.integer  "local_id",     limit: 4
@@ -127,5 +131,7 @@ ActiveRecord::Schema.define(version: 20160928154959) do
   add_foreign_key "administrator_locals", "locals"
   add_foreign_key "eventos", "locals"
   add_foreign_key "productos", "tipo_productos"
+  add_foreign_key "reservas", "salas"
+  add_foreign_key "reservas", "users"
   add_foreign_key "salas", "locals"
 end

@@ -4,16 +4,18 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:co_reserva) %>:</strong></dt>
-  <dd><%= @reserva.co_reserva %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:co_sala) %>:</strong></dt>
-  <dd><%= @reserva.co_sala %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:no_dni) %>:</strong></dt>
-  <dd><%= @reserva.no_dni %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sala_id) %>:</strong></dt>
+  <dd><%= @reserva.sala_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @reserva.user_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fe_reserva) %>:</strong></dt>
   <dd><%= @reserva.fe_reserva %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tx_Description) %>:</strong></dt>
-  <dd><%= @reserva.tx_Description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @reserva.descripcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
+  <dd><%= @reserva.estado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:aprobado) %>:</strong></dt>
+  <dd><%= @reserva.aprobado %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

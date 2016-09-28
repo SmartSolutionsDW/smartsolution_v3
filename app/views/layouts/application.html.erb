@@ -8,6 +8,21 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Latest compiled and minified CSS -->
     <%= yield :stylesheets %>
+    <style>
+     .checkbox input[type=checkbox] {
+          opacity: 10;
+          
+          margin: 1px 230px;
+          z-index: 1;
+          width: 60px;
+          height: 19px;
+          /* overflow: hidden; */
+          left: 0;
+      }
+       .form-horizontal .checkbox {
+          padding-top: 8px;
+        }
+    </style>
 </head>
 <body>
 <header>

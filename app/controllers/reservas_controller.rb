@@ -69,6 +69,6 @@ class ReservasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserva_params
-      params.require(:reserva).permit(:co_reserva, :co_sala, :no_dni, :fe_reserva, :tx_Description)
+      params.require(:reserva).permit(:sala_id, :user_id, :fe_reserva, :descripcion, :estado, :aprobado)
     end
 end

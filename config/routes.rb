@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :reservas
   resources :eventos
   resources :salas
   resources :administrator_locals
-  resources :reservas
   resources :locals
 
   resources :productos

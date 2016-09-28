@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  co_reserva: 1
-  co_sala: 1
-  no_dni: MyString
-  fe_reserva: 2016-09-27
-  tx_Description: MyText
+  sala_id: 
+  user_id: 
+  fe_reserva: 2016-09-28 16:17:00
+  descripcion: MyString
+  estado: MyString
+  aprobado: false
 
 two:
-  co_reserva: 1
-  co_sala: 1
-  no_dni: MyString
-  fe_reserva: 2016-09-27
-  tx_Description: MyText
+  sala_id: 
+  user_id: 
+  fe_reserva: 2016-09-28 16:17:00
+  descripcion: MyString
+  estado: MyString
+  aprobado: false
