@@ -1,9 +1,11 @@
 <%= simple_form_for @tipo_producto, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :Co_TipoProducto %>
-  <%= error_span(@tipo_producto[:Co_TipoProducto]) %>
-  <%= f.input :co_coTipoProducto %>
-  <%= error_span(@tipo_producto[:co_coTipoProducto]) %>
-
+  <%= f.input :name %>
+  <%= error_span(@tipo_producto[:name]) %>
+ 
+   </br>
+  <%= f.collection_radio_buttons :estado, [['1', 'Activo'] ,['0', 'Inactivo']], :first, :last  %>
+  <%= error_span(@tipo_producto[:estado]) %>
+  </br>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 tipo_productos_path, :class => 'btn btn-default' %>

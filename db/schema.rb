@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928161700) do
+ActiveRecord::Schema.define(version: 20160928175218) do
 
   create_table "administrator_locals", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
@@ -57,18 +57,6 @@ ActiveRecord::Schema.define(version: 20160928161700) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "productos", force: :cascade do |t|
-    t.string   "Co_Producto",      limit: 255
-    t.string   "No_Producto",      limit: 255
-    t.decimal  "Ss_Precio",                    precision: 10
-    t.integer  "Ct_Stock",         limit: 4
-    t.integer  "tipo_producto_id", limit: 4
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-  end
-
-  add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree
-
   create_table "reservas", force: :cascade do |t|
     t.integer  "sala_id",     limit: 4
     t.integer  "user_id",     limit: 4
@@ -95,10 +83,10 @@ ActiveRecord::Schema.define(version: 20160928161700) do
   add_index "salas", ["local_id"], name: "index_salas_on_local_id", using: :btree
 
   create_table "tipo_productos", force: :cascade do |t|
-    t.string   "Co_TipoProducto",   limit: 255
-    t.string   "co_coTipoProducto", limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "name",       limit: 50
+    t.string   "estado",     limit: 1
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -130,7 +118,6 @@ ActiveRecord::Schema.define(version: 20160928161700) do
   add_foreign_key "administrator_locals", "employees"
   add_foreign_key "administrator_locals", "locals"
   add_foreign_key "eventos", "locals"
-  add_foreign_key "productos", "tipo_productos"
   add_foreign_key "reservas", "salas"
   add_foreign_key "reservas", "users"
   add_foreign_key "salas", "locals"

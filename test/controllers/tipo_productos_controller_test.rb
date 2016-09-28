@@ -18,7 +18,7 @@ class TipoProductosControllerTest < ActionController::TestCase
 
   test "should create tipo_producto" do
     assert_difference('TipoProducto.count') do
-      post :create, tipo_producto: { Co_TipoProducto: @tipo_producto.Co_TipoProducto, co_coTipoProducto: @tipo_producto.co_coTipoProducto }
+      post :create, tipo_producto: { estado: @tipo_producto.estado, name: @tipo_producto.name }
     end
 
     assert_redirected_to tipo_producto_path(assigns(:tipo_producto))
@@ -35,7 +35,7 @@ class TipoProductosControllerTest < ActionController::TestCase
   end
 
   test "should update tipo_producto" do
-    patch :update, id: @tipo_producto, tipo_producto: { Co_TipoProducto: @tipo_producto.Co_TipoProducto, co_coTipoProducto: @tipo_producto.co_coTipoProducto }
+    patch :update, id: @tipo_producto, tipo_producto: { estado: @tipo_producto.estado, name: @tipo_producto.name }
     assert_redirected_to tipo_producto_path(assigns(:tipo_producto))
   end
 

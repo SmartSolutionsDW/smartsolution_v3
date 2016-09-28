@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:Co_TipoProducto) %></th>
-      <th><%= model_class.human_attribute_name(:co_coTipoProducto) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -16,8 +16,8 @@
     <% @tipo_productos.each do |tipo_producto| %>
       <tr>
         <td><%= link_to tipo_producto.id, tipo_producto_path(tipo_producto) %></td>
-        <td><%= tipo_producto.Co_TipoProducto %></td>
-        <td><%= tipo_producto.co_coTipoProducto %></td>
+        <td><%= tipo_producto.name %></td>
+        <td><%=   tipo_producto.estado == '1' ? 'Activo' :'Inactivo' %></td>
         <td><%=l tipo_producto.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

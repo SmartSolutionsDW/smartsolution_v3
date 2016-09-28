@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tipo_productos
   resources :reservas
   resources :eventos
   resources :salas
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   resources :locals
 
   resources :productos
-  resources :tipo_productos
 
   
   get 'pages/index'
