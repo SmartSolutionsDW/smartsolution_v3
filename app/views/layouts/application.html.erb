@@ -40,7 +40,7 @@
                  <br>
                  <ul class="nav navbar-nav kostic medium">
                   <a class="navbar-brand" href="/"><i class="fa fa-music" aria-hidden="true"></i> KaraokeBar</a>
-                   <% if @employee == nil %>
+                   <% if @employees == nil %>
                     <%= render 'layouts/menu' %>
                    <% end %>
                  </ul>
@@ -79,10 +79,10 @@
                     <li><%= link_to 'Cerrar Sessión', destroy_user_session_path, :method => 'DELETE' %></a></li>
                   </ul>
                 </li>
-              <% elsif (@employee != nil) %>
+              <% elsif (@employees != nil) %>
                 <li class="dropdown">
                    <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                      <%= @employee['nombre']+" "+ @employee['apellido']%> 
+                      <%= @employees['nombre']+" "+ @employees['apellido']%> 
                    </a>
                    <ul class="dropdown-menu">
                      
@@ -110,11 +110,12 @@
     </header>
     <!-- /header -->
     
-      <% if @employee != nil %>
+   
          
         
-      <%else%>
-      <% end %>
+      
+    
+      
       
        <% flash.each do |key, value| %>
           <div class="alert alert-success text-center <%= key %> alert-dismissible">
@@ -122,12 +123,43 @@
           <%= value %>
           </div>
         <% end %>
+       
+      
         <div id="main_container" class="container">
-          <main>
+                 <% if @employees != nil %>      
+              <div class="row">
+                <div class="col-lg-9">
+                  <%= bootstrap_flash %>
+                    <div class="page-header">
+                      <h1><%= yield :header_title %> <small><%= yield :header_sub_title %></small>
+                    </h1>
+                   </div>
+                  <%= yield %>
+                </div>
+                <div class="col-lg-3">
+                  <div class="well sidebar-nav">
+                    <h3 class="kostic">Menú Mantenimientos</h3>
+                    <ul class="nav nav-list">
+                       <% if (@employees != nil) %>
+                          
+                           <% if (@employees['admin'] == true) %>
+                                <%= render 'layouts/menu1' %>
+                           <% end %>
+                       <% end %>
+                    </ul>
+                  </div><!--/.well -->
+                </div><!--/span-->
+              </div><!--/row-->
+              
+           <%else%>   
+            <main>
             <%= yield %>
 
           </main>
+            <% end %>
         </div>
+        
+        
     <!-- /footer -->
     <footer class="bs-docs-footer kostic medium">
               <br>

@@ -1,29 +1,34 @@
 class ReservasController < ApplicationController
-  before_action :set_reserva, only: [:show, :edit, :update, :destroy]
+  before_action :index, :validar_admin,:set_reserva, only: [:show, :edit, :update, :destroy]
 
   # GET /reservas
   # GET /reservas.json
   def index
+     self.validar_admin
     @reservas = Reserva.all
   end
 
   # GET /reservas/1
   # GET /reservas/1.json
   def show
+     self.validar_admin
   end
 
   # GET /reservas/new
   def new
+     self.validar_admin
     @reserva = Reserva.new
   end
 
   # GET /reservas/1/edit
   def edit
+     self.validar_admin
   end
 
   # POST /reservas
   # POST /reservas.json
   def create
+     self.validar_admin
     @reserva = Reserva.new(reserva_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class ReservasController < ApplicationController
   # PATCH/PUT /reservas/1
   # PATCH/PUT /reservas/1.json
   def update
+     self.validar_admin
     respond_to do |format|
       if @reserva.update(reserva_params)
         format.html { redirect_to @reserva, notice: 'Reserva was successfully updated.' }
@@ -54,12 +60,30 @@ class ReservasController < ApplicationController
   # DELETE /reservas/1
   # DELETE /reservas/1.json
   def destroy
+     self.validar_admin
     @reserva.destroy
     respond_to do |format|
       format.html { redirect_to reservas_url, notice: 'Reserva was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+
+  #validamos , porque solo los empleados y administrador pueden crear local
+   def validar_admin
+      
+       
+       logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
+       if(session[:intranet]!=nil)
+         
+         @employees=session[:intranet]
+          if(session[:intranet]['admin']==false)
+            redirect_to intranet_path
+          end
+       else
+          redirect_to intranet_path   
+       end
+      
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

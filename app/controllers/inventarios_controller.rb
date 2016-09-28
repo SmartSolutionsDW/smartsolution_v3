@@ -1,29 +1,34 @@
 class InventariosController < ApplicationController
-  before_action :set_inventario, only: [:show, :edit, :update, :destroy]
+  before_action :index, :validar_admin,:set_inventario, only: [:show, :edit, :update, :destroy]
 
   # GET /inventarios
   # GET /inventarios.json
   def index
+    self.validar_admin
     @inventarios = Inventario.all
   end
 
   # GET /inventarios/1
   # GET /inventarios/1.json
   def show
+    self.validar_admin
   end
 
   # GET /inventarios/new
   def new
+    self.validar_admin
     @inventario = Inventario.new
   end
 
   # GET /inventarios/1/edit
   def edit
+    self.validar_admin
   end
 
   # POST /inventarios
   # POST /inventarios.json
   def create
+    self.validar_admin
     @inventario = Inventario.new(inventario_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class InventariosController < ApplicationController
   # PATCH/PUT /inventarios/1
   # PATCH/PUT /inventarios/1.json
   def update
+    self.validar_admin
     respond_to do |format|
       if @inventario.update(inventario_params)
         format.html { redirect_to @inventario, notice: 'Inventario was successfully updated.' }
@@ -54,6 +60,7 @@ class InventariosController < ApplicationController
   # DELETE /inventarios/1
   # DELETE /inventarios/1.json
   def destroy
+    self.validar_admin
     @inventario.destroy
     respond_to do |format|
       format.html { redirect_to inventarios_url, notice: 'Inventario was successfully destroyed.' }
@@ -61,6 +68,25 @@ class InventariosController < ApplicationController
     end
   end
 
+
+   #validamos , porque solo los empleados y administrador pueden crear local
+   def validar_admin
+      
+       
+       logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
+       if(session[:intranet]!=nil)
+         
+         @employees=session[:intranet]
+          if(session[:intranet]['admin']==false)
+            redirect_to intranet_path
+          end
+       else
+          redirect_to intranet_path   
+       end
+      
+   end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_inventario

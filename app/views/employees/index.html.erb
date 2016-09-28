@@ -2,6 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => 'Empleados' %></h1>
 </div>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -17,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @employees.each do |employee| %>
+    <% @employee.each do |employee| %>
       <tr>
         <td><%= link_to employee.id, employee_path(employee) %></td>
         <td><%= employee.nombre %></td>

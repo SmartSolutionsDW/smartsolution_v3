@@ -1,10 +1,11 @@
 class SalasController < ApplicationController
   
-  before_action :set_sala, only: [:show, :edit, :update, :destroy]
+  before_action :index, :validar_admin, :set_sala, only: [:show, :edit, :update, :destroy]
 
   # GET /salas
   # GET /salas.json
   def index
+    self.validar_admin
     @salas = Sala.all
     logger.debug "<<<<< Index sala #{@salas} >>>>> "
   end
@@ -13,10 +14,12 @@ class SalasController < ApplicationController
   # GET /salas/1
   # GET /salas/1.json
   def show
+    self.validar_admin
   end
 
   # GET /salas/new
   def new
+    self.validar_admin
     @sala = Sala.new
      logger.debug "<<<<< NEW sala #{@sala.inspect} >>>>> "
   
@@ -24,11 +27,13 @@ class SalasController < ApplicationController
 
   # GET /salas/1/edit
   def edit
+    self.validar_admin
   end
 
   # POST /salas
   # POST /salas.json
   def create
+    self.validar_admin
     @sala = Sala.new(sala_params)
 
     respond_to do |format|
@@ -45,6 +50,7 @@ class SalasController < ApplicationController
   # PATCH/PUT /salas/1
   # PATCH/PUT /salas/1.json
   def update
+    self.validar_admin
     respond_to do |format|
       if @sala.update(sala_params)
         format.html { redirect_to @sala, notice: 'Sala was successfully updated.' }
@@ -59,6 +65,7 @@ class SalasController < ApplicationController
   # DELETE /salas/1
   # DELETE /salas/1.json
   def destroy
+    self.validar_admin
     @sala.destroy
     respond_to do |format|
       format.html { redirect_to salas_url, notice: 'Sala was successfully destroyed.' }
@@ -66,6 +73,25 @@ class SalasController < ApplicationController
     end
   end
 
+
+  #validamos , porque solo los empleados y administrador pueden crear local
+   def validar_admin
+      
+       
+       logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
+       if(session[:intranet]!=nil)
+         
+         @employees=session[:intranet]
+          if(session[:intranet]['admin']==false)
+            redirect_to intranet_path
+          end
+       else
+          redirect_to intranet_path   
+       end
+      
+   end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sala

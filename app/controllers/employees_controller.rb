@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     self.validar_admin
-    @employees = Employee.all
+    @employee = Employee.all
   end
 
   # GET /employees/1
@@ -15,6 +15,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
+    
     @employee = Employee.new
   end
 
@@ -82,7 +83,7 @@ class EmployeesController < ApplicationController
        logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
        if(session[:intranet]!=nil)
          
-         @employee=session[:intranet]
+         @employees=session[:intranet]
           if(session[:intranet]['admin']==false)
             redirect_to intranet_path
           end

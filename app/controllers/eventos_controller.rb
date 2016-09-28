@@ -1,29 +1,34 @@
 class EventosController < ApplicationController
-  before_action :set_evento, only: [:show, :edit, :update, :destroy]
+  before_action :index, :validar_admin, :set_evento, only: [:show, :edit, :update, :destroy]
 
   # GET /eventos
   # GET /eventos.json
   def index
+    self.validar_admin
     @eventos = Evento.all
   end
 
   # GET /eventos/1
   # GET /eventos/1.json
   def show
+    self.validar_admin
   end
 
   # GET /eventos/new
   def new
+    self.validar_admin
     @evento = Evento.new
   end
 
   # GET /eventos/1/edit
   def edit
+    self.validar_admin
   end
 
   # POST /eventos
   # POST /eventos.json
   def create
+    self.validar_admin
     @evento = Evento.new(evento_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class EventosController < ApplicationController
   # PATCH/PUT /eventos/1
   # PATCH/PUT /eventos/1.json
   def update
+    self.validar_admin
     respond_to do |format|
       if @evento.update(evento_params)
         format.html { redirect_to @evento, notice: 'Evento was successfully updated.' }
@@ -54,13 +60,32 @@ class EventosController < ApplicationController
   # DELETE /eventos/1
   # DELETE /eventos/1.json
   def destroy
+    self.validar_admin
     @evento.destroy
     respond_to do |format|
       format.html { redirect_to eventos_url, notice: 'Evento was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
+  
+   #validamos , porque solo los empleados y administrador pueden crear local
+   def validar_admin
+      
+       
+       logger.debug "<<<<< validar sesion en empleados #{session[:intranet].inspect}>>>>>" 
+       if(session[:intranet]!=nil)
+         
+         @employees=session[:intranet]
+          if(session[:intranet]['admin']==false)
+            redirect_to intranet_path
+          end
+       else
+          redirect_to intranet_path   
+       end
+      
+   end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evento
