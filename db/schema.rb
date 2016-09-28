@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928175218) do
+ActiveRecord::Schema.define(version: 20160928182307) do
 
   create_table "administrator_locals", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20160928175218) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "productos", force: :cascade do |t|
+    t.integer  "tipo_producto_id", limit: 4
+    t.string   "name",             limit: 80
+    t.decimal  "price",                       precision: 8, scale: 2
+    t.string   "estado",           limit: 1
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+  end
+
+  add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree
 
   create_table "reservas", force: :cascade do |t|
     t.integer  "sala_id",     limit: 4
@@ -118,6 +129,7 @@ ActiveRecord::Schema.define(version: 20160928175218) do
   add_foreign_key "administrator_locals", "employees"
   add_foreign_key "administrator_locals", "locals"
   add_foreign_key "eventos", "locals"
+  add_foreign_key "productos", "tipo_productos"
   add_foreign_key "reservas", "salas"
   add_foreign_key "reservas", "users"
   add_foreign_key "salas", "locals"

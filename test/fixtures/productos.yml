@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Co_Producto: MyString
-  No_Producto: MyString
-  Ss_Precio: 9.99
-  Ct_Stock: 1
   tipo_producto_id: 
+  name: MyString
+  price: 9.99
+  estado: MyString
 
 two:
-  Co_Producto: MyString
-  No_Producto: MyString
-  Ss_Precio: 9.99
-  Ct_Stock: 1
   tipo_producto_id: 
+  name: MyString
+  price: 9.99
+  estado: MyString

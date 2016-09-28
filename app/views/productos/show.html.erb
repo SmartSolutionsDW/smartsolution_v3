@@ -4,16 +4,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:Co_Producto) %>:</strong></dt>
-  <dd><%= @producto.Co_Producto %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:No_Producto) %>:</strong></dt>
-  <dd><%= @producto.No_Producto %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Ss_Precio) %>:</strong></dt>
-  <dd><%= @producto.Ss_Precio %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Ct_Stock) %>:</strong></dt>
-  <dd><%= @producto.Ct_Stock %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tipo_producto_id) %>:</strong></dt>
-  <dd><%= @producto.tipo_producto_id %></dd>
+  <dd><%= @producto.tipo_producto_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @producto.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @producto.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
+  <dd><%= @producto.estado == '1' ? 'Activo' :'Inactivo' %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

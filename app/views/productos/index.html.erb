@@ -6,11 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:Co_Producto) %></th>
-      <th><%= model_class.human_attribute_name(:No_Producto) %></th>
-      <th><%= model_class.human_attribute_name(:Ss_Precio) %></th>
-      <th><%= model_class.human_attribute_name(:Ct_Stock) %></th>
       <th><%= model_class.human_attribute_name(:tipo_producto_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,11 +18,10 @@
     <% @productos.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.Co_Producto %></td>
-        <td><%= producto.No_Producto %></td>
-        <td><%= producto.Ss_Precio %></td>
-        <td><%= producto.Ct_Stock %></td>
-        <td><%= producto.nombre_producto%></td>
+        <td><%= producto.tipo_producto_id %></td>
+        <td><%= producto.name %></td>
+        <td><%= producto.price %></td>
+        <td><%= producto.estado == '1' ? 'Activo' :'Inactivo' %></td>
         <td><%=l producto.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

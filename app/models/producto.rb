@@ -1,7 +1,8 @@
 class Producto < ActiveRecord::Base
   belongs_to :tipo_producto
-  include Loggable 
-  def nombre_producto    
-    self.tipo_producto.co_coTipoProducto  
+  validates :tipo_producto, presence: true
+  
+   def tipo_producto_name
+      self.tipo_producto.name
   end
 end

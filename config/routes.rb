@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
   resources :tipo_productos
   resources :reservas
   resources :eventos
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   resources :administrator_locals
   resources :locals
 
-  resources :productos
 
   
   get 'pages/index'
