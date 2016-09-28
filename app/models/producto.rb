@@ -1,5 +1,6 @@
 class Producto < ActiveRecord::Base
   belongs_to :tipo_producto
+  has_many :inventario
   validates :tipo_producto, presence: true
   
    def tipo_producto_name

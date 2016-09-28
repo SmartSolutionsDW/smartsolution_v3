@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local_id: 
+  producto_id: 
+  cant: 1
+  precio_compra: 9.99
+  precio_venta: 9.99
+  entrada_salida: MyString
+
+two:
+  local_id: 
+  producto_id: 
+  cant: 1
+  precio_compra: 9.99
+  precio_venta: 9.99
+  entrada_salida: MyString

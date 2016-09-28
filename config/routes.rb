@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :inventarios
+  resources :inventories
   resources :productos
   resources :tipo_productos
   resources :reservas
