@@ -1,17 +1,21 @@
 <div class="container">
   <div class="row">
     <div class='col-md-8 '>
-      <div class="panel panel-primary">
+      <div class="panel panel-primary kostic medium">
          <div class="panel-heading">Iniciar Sesión</div>
          <div class="panel-body">
              
-            <%= form_tag(:action => 'intento_sesion') do %>
+                <%= form_tag(:action => 'intento_sesion') do %>
                 <%= label_tag(:dni) %>
+                <br>
                 <%= text_field_tag(:dni) %>
-                </br>
+                <br>
+                <br>
                 <%= label_tag(:password) %>
+                <br>
                 <%= password_field_tag(:password) %>
-                </br>
+                <br>
+                <br>
                 <%=submit_tag 'session' %>
             <% end %>
             
