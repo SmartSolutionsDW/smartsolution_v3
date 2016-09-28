@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927145956) do
+ActiveRecord::Schema.define(version: 20160928072235) do
+
+  create_table "administrator_locals", force: :cascade do |t|
+    t.integer  "employee_id", limit: 4
+    t.integer  "local_id",    limit: 4
+    t.string   "estado",      limit: 1
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "administrator_locals", ["employee_id"], name: "index_administrator_locals_on_employee_id", using: :btree
+  add_index "administrator_locals", ["local_id"], name: "index_administrator_locals_on_local_id", using: :btree
 
   create_table "employees", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -68,14 +79,15 @@ ActiveRecord::Schema.define(version: 20160927145956) do
   end
 
   create_table "salas", force: :cascade do |t|
-    t.integer  "co_sala",      limit: 4
-    t.integer  "co_local",     limit: 4
+    t.integer  "local_id",     limit: 4
     t.integer  "no_sala",      limit: 4
     t.integer  "qt_capacidad", limit: 4
-    t.text     "description",  limit: 65535
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "descripcion",  limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
+
+  add_index "salas", ["local_id"], name: "index_salas_on_local_id", using: :btree
 
   create_table "tipo_productos", force: :cascade do |t|
     t.string   "Co_TipoProducto",   limit: 255
@@ -110,5 +122,8 @@ ActiveRecord::Schema.define(version: 20160927145956) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "administrator_locals", "employees"
+  add_foreign_key "administrator_locals", "locals"
   add_foreign_key "productos", "tipo_productos"
+  add_foreign_key "salas", "locals"
 end

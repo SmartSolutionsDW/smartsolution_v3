@@ -1,0 +1,1 @@
+json.array! @administrator_locals, partial: 'administrator_locals/administrator_local', as: :administrator_local

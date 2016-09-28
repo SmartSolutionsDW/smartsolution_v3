@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @administrator_local.employee %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @administrator_local.local %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @administrator_local.estado %>
+</p>
+
+<%= link_to 'Edit', edit_administrator_local_path(@administrator_local) %> |
+<%= link_to 'Back', administrator_locals_path %>

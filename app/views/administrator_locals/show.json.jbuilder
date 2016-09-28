@@ -1,0 +1,1 @@
+json.partial! "administrator_locals/administrator_local", administrator_local: @administrator_local

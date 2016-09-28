@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Administrator Locals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Local</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administrator_locals.each do |administrator_local| %>
+      <tr>
+        <td><%= administrator_local.employee %></td>
+        <td><%= administrator_local.local %></td>
+        <td><%= administrator_local.estado %></td>
+        <td><%= link_to 'Show', administrator_local %></td>
+        <td><%= link_to 'Edit', edit_administrator_local_path(administrator_local) %></td>
+        <td><%= link_to 'Destroy', administrator_local, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Administrator local', new_administrator_local_path %>

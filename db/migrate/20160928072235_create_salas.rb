@@ -1,11 +1,10 @@
 class CreateSalas < ActiveRecord::Migration
   def change
     create_table :salas do |t|
-      t.integer :co_sala
-      t.integer :co_local
+      t.references :local, index: true, foreign_key: true
       t.integer :no_sala
       t.integer :qt_capacidad
-      t.text :description
+      t.string :descripcion
 
       t.timestamps null: false
     end

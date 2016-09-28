@@ -1,12 +1,15 @@
 class SalasController < ApplicationController
+  
   before_action :set_sala, only: [:show, :edit, :update, :destroy]
 
   # GET /salas
   # GET /salas.json
   def index
     @salas = Sala.all
+    logger.debug "<<<<< Index sala #{@salas} >>>>> "
   end
-
+  logger.debug "<<<<< SALA >>>>> "
+ 
   # GET /salas/1
   # GET /salas/1.json
   def show
@@ -15,6 +18,8 @@ class SalasController < ApplicationController
   # GET /salas/new
   def new
     @sala = Sala.new
+     logger.debug "<<<<< NEW sala #{@sala.inspect} >>>>> "
+  
   end
 
   # GET /salas/1/edit
@@ -69,6 +74,9 @@ class SalasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sala_params
-      params.require(:sala).permit(:co_sala, :co_local, :no_sala, :qt_capacidad, :description)
+      params.require(:sala).permit(:local_id, :no_sala, :qt_capacidad, :descripcion)
+       
+      
+    
     end
 end

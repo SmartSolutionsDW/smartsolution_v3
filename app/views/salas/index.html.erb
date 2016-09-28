@@ -6,11 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:co_sala) %></th>
-      <th><%= model_class.human_attribute_name(:co_local) %></th>
+      <th><%= model_class.human_attribute_name(:local_id) %></th>
       <th><%= model_class.human_attribute_name(:no_sala) %></th>
       <th><%= model_class.human_attribute_name(:qt_capacidad) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,11 +18,10 @@
     <% @salas.each do |sala| %>
       <tr>
         <td><%= link_to sala.id, sala_path(sala) %></td>
-        <td><%= sala.co_sala %></td>
-        <td><%= sala.co_local %></td>
+        <td><%= sala.local_name %></td>
         <td><%= sala.no_sala %></td>
         <td><%= sala.qt_capacidad %></td>
-        <td><%= sala.description %></td>
+        <td><%= sala.descripcion %></td>
         <td><%=l sala.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

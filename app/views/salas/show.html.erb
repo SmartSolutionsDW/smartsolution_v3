@@ -4,16 +4,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:co_sala) %>:</strong></dt>
-  <dd><%= @sala.co_sala %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:co_local) %>:</strong></dt>
-  <dd><%= @sala.co_local %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:local_id) %>:</strong></dt>
+  <dd><%= @sala.local_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:no_sala) %>:</strong></dt>
   <dd><%= @sala.no_sala %></dd>
   <dt><strong><%= model_class.human_attribute_name(:qt_capacidad) %>:</strong></dt>
   <dd><%= @sala.qt_capacidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @sala.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @sala.descripcion %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  employee_id: 
   local_id: 
-  no_sala: 1
-  qt_capacidad: 1
-  descripcion: MyString
+  estado: MyString
 
 two:
+  employee_id: 
   local_id: 
-  no_sala: 1
-  qt_capacidad: 1
-  descripcion: MyString
+  estado: MyString
