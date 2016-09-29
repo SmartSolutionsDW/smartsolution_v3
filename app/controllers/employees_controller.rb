@@ -11,21 +11,24 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    self.validar_admin
   end
 
   # GET /employees/new
   def new
-    
+    self.validar_admin
     @employee = Employee.new
   end
 
   # GET /employees/1/edit
   def edit
+    self.validar_admin
   end
 
   # POST /employees
   # POST /employees.json
   def create
+    self.validar_admin
     @employee = Employee.new(employee_params)
 
     respond_to do |format|
@@ -42,6 +45,7 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+    self.validar_admin
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
@@ -56,6 +60,7 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   # DELETE /employees/1.json
   def destroy
+    self.validar_admin
     #@employee.destroy
     logger.debug "<<<<< eliminando empleado >>>>>"
     if(@employee['id']!=3)
