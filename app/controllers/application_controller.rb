@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   #sintaxis para renderizar pagina a usuario logueado
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || stored_location_for(resource) || pages_index_path
+    request.env['omniauth.origin'] || stored_location_for(resource) || home_index_path
   end
   #
   
