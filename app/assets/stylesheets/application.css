@@ -84,7 +84,7 @@ body{
 
 .bs-docs-footer {
       background-color:#009688;
-      position: absolute;
+      position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
