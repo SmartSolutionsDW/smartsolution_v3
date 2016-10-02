@@ -176,5 +176,10 @@ body{
 	font-size:4em;
 }
 .ultra-big{
-	font-size:7em;
+	font-size:8em;
 }
+
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

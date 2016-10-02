@@ -49,6 +49,9 @@ Rails.application.routes.draw do
   end
   
   
+
+
+  
   #get '/intranet', to: 'intranet#login', as: 'login'
   
   
@@ -106,4 +109,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
 end
