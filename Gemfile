@@ -51,7 +51,7 @@ gem 'font-awesome-sass', '~> 4.6.2'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
-
+gem 'paperclip', '~> 5.1'
 # Simplified Form Management Support
 gem 'simple_form'
 
