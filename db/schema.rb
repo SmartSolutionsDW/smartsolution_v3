@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928212726) do
+ActiveRecord::Schema.define(version: 20161005160133) do
 
   create_table "administrator_locals", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
@@ -72,12 +72,16 @@ ActiveRecord::Schema.define(version: 20160928212726) do
   end
 
   create_table "productos", force: :cascade do |t|
-    t.integer  "tipo_producto_id", limit: 4
-    t.string   "name",             limit: 80
-    t.decimal  "price",                       precision: 8, scale: 2
-    t.string   "estado",           limit: 1
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.integer  "tipo_producto_id",     limit: 4
+    t.string   "name",                 limit: 80
+    t.decimal  "price",                            precision: 8, scale: 2
+    t.string   "estado",               limit: 1
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.string   "picture_file_name",    limit: 255
+    t.string   "picture_content_type", limit: 255
+    t.integer  "picture_file_size",    limit: 4
+    t.datetime "picture_updated_at"
   end
 
   add_index "productos", ["tipo_producto_id"], name: "index_productos_on_tipo_producto_id", using: :btree

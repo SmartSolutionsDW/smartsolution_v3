@@ -8,6 +8,9 @@
   <%= error_span(@producto[:name]) %>
   <%= f.input :price %>
   <%= error_span(@producto[:price]) %>
+  <%= image_tag @producto.picture.url(:medium) unless @producto.picture_file_name.nil? %>
+  <%= f.input :picture, as: :file %>
+  <%= error_span(@producto[:picture]) %>
   </br>
    <%= f.collection_radio_buttons :estado, [['1', 'Activo'] ,['0', 'Inactivo']], :first, :last  %>
   <%= error_span(@producto[:estado]) %>
