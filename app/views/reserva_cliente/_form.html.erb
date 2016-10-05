@@ -1,0 +1,17 @@
+<%= simple_form_for @reserva_cli, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :sala, label_method: :descripcion, value_method: :id, include_blank: false %>
+  <%= error_span(@reserva_cli[:sala]) %>
+  
+ 
+  
+  <%= f.input :fe_reserva %>
+  <%= error_span(@reserva_cli[:fe_reserva]) %>
+  <%= f.input :descripcion %>
+  <%= error_span(@reserva_cli[:descripcion]) %>
+  
+
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                reservaclicreate_path, :class => 'btn btn-default' %>
+<% end %>

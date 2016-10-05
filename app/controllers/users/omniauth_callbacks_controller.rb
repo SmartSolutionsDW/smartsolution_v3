@@ -10,6 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           
            @auth = request.env["omniauth.auth"]
            session[:omniauth] = @auth.except('extra')
+           session[:cliente] = @user.except('cliente')
           logger.debug "<<<<<provides_callback_for 1111>>>>> "
         else
           logger.debug "<<<<<provides_callback_for 222222>>>>>"
@@ -19,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           prueba=@auth.except('extra')
           session[:omniauth] = @auth.except('extra')
           logger.debug "<<<<<provides_callback_for >>>>> #{@auth}"
-          byebug
+          session[:cliente] = @user.except('cliente')
           
           redirect_to new_user_registration_url
         end

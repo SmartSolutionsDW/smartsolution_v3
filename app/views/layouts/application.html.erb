@@ -79,7 +79,7 @@
                     <li><%= link_to 'Cerrar Sessión', destroy_user_session_path, :method => 'DELETE' %></a></li>
                   </ul>
                 </li>
-              <% elsif (@employees != nil) %>
+              <% elsif  @employees != nil %>
                 <li class="dropdown">
                    <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                       <%= @employees['nombre']+" "+ @employees['apellido']%> 

@@ -1,32 +1,24 @@
+<h2>Reserva de cliente</h2>
 <%- model_class = Reserva -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:sala_id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:fe_reserva) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:estado) %></th>
       <th><%= model_class.human_attribute_name(:aprobado) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @reservas.each do |reserva| %>
+    <% @reserva_cli.each do |reserva| %>
       <tr>
         <td><%= link_to reserva.id, reserva_path(reserva) %></td>
         <td><%= reserva.sala_name %></td>
-        <td><%= reserva.user_name %></td>
         <td><%= reserva.fe_reserva %></td>
         <td><%= reserva.descripcion %></td>
-        <td><%= reserva.estado %></td>
         <td><%= reserva.aprobado == '1' ? 'Aprobado' :'Des-aprobado' %></td>
-        <td><%=l reserva.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_reserva_path(reserva), :class => 'btn btn-default btn-xs' %>
@@ -42,5 +34,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_reserva_path,
+            reservaclinew_path,
             :class => 'btn btn-primary' %>

@@ -48,7 +48,11 @@ Rails.application.routes.draw do
     
   end
   
-  
+  begin 
+    get "/reserva_cliente/reservacli", to: 'reserva_cliente#reservacli', as: 'reservacli'
+    get "/reserva_cliente/new", to: 'reserva_cliente#new', as: 'reservaclinew'
+    post "/reserva_cliente/create", to: 'reserva_cliente#create', as: 'reservaclicreate' 
+  end
 
 
   
