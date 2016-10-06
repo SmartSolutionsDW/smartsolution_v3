@@ -15,8 +15,14 @@ class Producto < ActiveRecord::Base
    def tipo_producto_name
       self.tipo_producto.name
    end
-  def picture_url
-    self.picture.url(:medium)
-  end
    
+   validates :name, presence: true, 
+                    uniqueness: {case_sensitive: false}
+                    
+    validates :price, presence: true, 
+                 numericality: { greater_than_or_equal_to: 0 }
+                 
+    validates :estado, presence: true, 
+                    uniqueness: {case_sensitive: false}
+                   
 end
