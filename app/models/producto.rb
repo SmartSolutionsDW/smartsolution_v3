@@ -15,4 +15,8 @@ class Producto < ActiveRecord::Base
    def tipo_producto_name
       self.tipo_producto.name
    end
+  def picture_url
+    self.picture.url(:medium)
+  end
+   
 end
