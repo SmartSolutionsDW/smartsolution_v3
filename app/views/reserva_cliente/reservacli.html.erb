@@ -18,12 +18,12 @@
         <td><%= reserva.sala_name %></td>
         <td><%= reserva.fe_reserva %></td>
         <td><%= reserva.descripcion %></td>
-        <td><%= reserva.aprobado == '1' ? 'Aprobado' :'Des-aprobado' %></td>
+        <td><%= reserva.aprobado == true ? 'Aprobado' : 'no revisado' %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_reserva_path(reserva), :class => 'btn btn-default btn-xs' %>
+                      reservacliedit_path(reserva), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      reserva_path(reserva),
+                      reservaclidelete_path(reserva),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -36,3 +36,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             reservaclinew_path,
             :class => 'btn btn-primary' %>
+

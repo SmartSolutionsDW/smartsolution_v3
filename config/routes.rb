@@ -52,6 +52,9 @@ Rails.application.routes.draw do
     get "/reserva_cliente/reservacli", to: 'reserva_cliente#reservacli', as: 'reservacli'
     get "/reserva_cliente/new", to: 'reserva_cliente#new', as: 'reservaclinew'
     post "/reserva_cliente/create", to: 'reserva_cliente#create', as: 'reservaclicreate' 
+    get "/reserva_cliente/edit/:id", to: 'reserva_cliente#edit', as: 'reservacliedit'
+    put "/reserva_cliente/update/:id", to: 'reserva_cliente#update', as: 'reservacliupdate'
+    delete  "/reserva_cliente/destroy/:id", to: 'reserva_cliente#destroy', as: 'reservaclidelete'
   end
 
 

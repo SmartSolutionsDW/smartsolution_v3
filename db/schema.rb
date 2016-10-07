@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005160133) do
+ActiveRecord::Schema.define(version: 20161006012315) do
 
   create_table "administrator_locals", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
@@ -150,6 +150,9 @@ ActiveRecord::Schema.define(version: 20161005160133) do
   add_foreign_key "inventarios", "locals"
   add_foreign_key "inventarios", "productos"
   add_foreign_key "productos", "tipo_productos"
+  add_foreign_key "inventarios", "productos"
+  add_foreign_key "productos", "tipo_productos"
+  add_foreign_key "reservas", "locals"
   add_foreign_key "reservas", "salas"
   add_foreign_key "reservas", "users"
   add_foreign_key "salas", "locals"
