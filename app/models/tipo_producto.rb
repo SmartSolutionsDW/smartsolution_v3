@@ -4,6 +4,6 @@ class TipoProducto < ActiveRecord::Base
     validates :name, presence: true, 
                     uniqueness: {case_sensitive: false}
                     
-    validates :estado, presence: true, 
-                    uniqueness: {case_sensitive: false}
+    validates :estado, presence: true
+                  
 end

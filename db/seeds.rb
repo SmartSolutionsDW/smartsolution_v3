@@ -5,16 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Producto.delete_all
+
 
 TipoProducto.delete_all
+Employee.delete_all
+
+# Tipo de Producto
+
+TipoProducto.create(name: 'Bebidas sin alcohol', estado:'1')
+TipoProducto.create(name: 'Licores', estado:'1') 
+TipoProducto.create(name: 'Vinos', estado:'1')
+TipoProducto.create(name: 'Cervezas', estado:'1')
+TipoProducto.create(name: 'Piqueos', estado:'1')
 
 
-# Categories
+# Empleados
 
-TipoProducto.create(name: 'Bebidas sin alcohol')
-TipoProducto.create(name: 'Licores')
-TipoProducto.create(name: 'Vinos')
-TipoProducto.create(name: 'Cervezas')
-TipoProducto.create(name: 'Piqueos')
+Employee.create(nombre:'Manfred', apellido:'Chaupin Mejia', dni:'45025759', correo:'manfredp88@gmail.com', password:'123456789', admin:'1')
+Employee.create(nombre:'Mario', apellido:'Castro Ascencio', dni:'71729170', correo:'mcastroascencio@gmail.com', password:'123456789', admin:'1')
+Employee.create(nombre:'Jhonatan', apellido:'Loayza Ortiz', dni:'45781945', correo:'jhonataloayza@gmail.com', password:'123456789', admin:'1')
 

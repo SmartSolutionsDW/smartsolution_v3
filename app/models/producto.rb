@@ -22,7 +22,7 @@ class Producto < ActiveRecord::Base
     validates :price, presence: true, 
                  numericality: { greater_than_or_equal_to: 0 }
                  
-    validates :estado, presence: true, 
-                    uniqueness: {case_sensitive: false}
+    validates :estado, presence: true
+                    
                    
 end

@@ -95,8 +95,10 @@ ActiveRecord::Schema.define(version: 20161006012315) do
     t.boolean  "aprobado"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "local_id",    limit: 4
   end
 
+  add_index "reservas", ["local_id"], name: "index_reservas_on_local_id", using: :btree
   add_index "reservas", ["sala_id"], name: "index_reservas_on_sala_id", using: :btree
   add_index "reservas", ["user_id"], name: "index_reservas_on_user_id", using: :btree
 
@@ -148,8 +150,6 @@ ActiveRecord::Schema.define(version: 20161006012315) do
   add_foreign_key "administrator_locals", "locals"
   add_foreign_key "eventos", "locals"
   add_foreign_key "inventarios", "locals"
-  add_foreign_key "inventarios", "productos"
-  add_foreign_key "productos", "tipo_productos"
   add_foreign_key "inventarios", "productos"
   add_foreign_key "productos", "tipo_productos"
   add_foreign_key "reservas", "locals"
