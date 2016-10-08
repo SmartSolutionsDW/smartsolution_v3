@@ -4,7 +4,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+       <th><%= model_class.human_attribute_name(:local_id) %></th>
       <th><%= model_class.human_attribute_name(:sala_id) %></th>
+     
       <th><%= model_class.human_attribute_name(:fe_reserva) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:aprobado) %></th>
@@ -15,6 +17,7 @@
     <% @reserva_cli.each do |reserva| %>
       <tr>
         <td><%= link_to reserva.id, reserva_path(reserva) %></td>
+        <td><%= reserva.local_name %></td>
         <td><%= reserva.sala_name %></td>
         <td><%= reserva.fe_reserva %></td>
         <td><%= reserva.descripcion %></td>

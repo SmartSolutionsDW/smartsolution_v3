@@ -3,7 +3,8 @@
   <%= f.association :sala, label_method: :descripcion, value_method: :id, include_blank: false %>
   <%= error_span(@reserva_cli[:sala]) %>
   
- 
+  <%= f.collection_select :local_id, Local.order(:id), :id, :No_Local, include_blank: true%>
+  <%= f.grouped_collection_select :sala_id, Local.order(:id), :id, :descripcion, include_blank: true%>
   
   <%= f.input :fe_reserva %>
   <%= error_span(@reserva_cli[:fe_reserva]) %>

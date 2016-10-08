@@ -82,6 +82,6 @@ class ReservaClienteController < ApplicationController
     end
     
     def reservacli_params
-      params.require(:reserva).permit(:id,:sala_id,:user_id , :fe_reserva, :descripcion, :aprobado)
+      params.require(:reserva).permit(:id,:sala_id,:user_id , :fe_reserva, :descripcion, :aprobado,:local_id)
     end
 end

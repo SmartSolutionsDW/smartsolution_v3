@@ -2,6 +2,7 @@ class Local < ActiveRecord::Base
     has_many :sala 
     has_many :evento
     has_many :inventario
+    has_many :reserva
      #attr_accessible :id, :descripcion
      
 

@@ -1,5 +1,8 @@
 <%= simple_form_for @reserva_cli,:url => reservacliupdate_path, :method => :put, :html => { :class => 'form-horizontal' } do |f| %>
 
+<%= f.association :local, label_method: :descripcion, value_method: :id, include_blank: false %>
+  <%= error_span(@reserva_cli[:local]) %>
+
   <%= f.association :sala, label_method: :descripcion, value_method: :id, include_blank: false %>
   <%= error_span(@reserva_cli[:sala]) %>
   
