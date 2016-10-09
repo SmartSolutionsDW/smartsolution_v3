@@ -1,25 +1,24 @@
-<%= simple_form_for @inventario, :html => { :class => 'form-horizontal' } do |f| %>
-
-   <%= f.association :local, label_method: :No_Local, value_method: :id, include_blank: false %>
-   <%= error_span(@inventario[:local]) %>
-   <%= f.association :producto, label_method: :name, value_method: :id, include_blank: false %>
-   <%= error_span(@inventario[:producto]) %>
-
-
-
-
-  <%= f.input :cant %>
-  <%= error_span(@inventario[:cant]) %>
-  <%= f.input :precio_compra %>
-  <%= error_span(@inventario[:precio_compra]) %>
-  <%= f.input :precio_venta %>
-  <%= error_span(@inventario[:precio_venta]) %>
-  </br>
-  <%= f.collection_radio_buttons :entrada_salida, [['E', 'Entrada'] ,['S', 'Salida']], :first, :last  %>
-  </br>
-  <%= error_span(@inventario[:entrada_salida]) %>
-
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                inventarios_path, :class => 'btn btn-default' %>
-<% end %>
+<div class="well infobox">
+    <%= simple_form_for @inventario, :html => { :class => 'form-horizontal' } do |f| %>
+    
+      <%= f.association :local, label_method: :No_Local, value_method: :id, include_blank: false %>
+      <%= error_span(@inventario[:local]) %>
+      <%= f.association :producto, label_method: :name, value_method: :id, include_blank: false %>
+      <%= error_span(@inventario[:producto]) %>
+    
+      <%= f.input :cant %>
+      <%= error_span(@inventario[:cant]) %>
+      <%= f.input :precio_compra %>
+      <%= error_span(@inventario[:precio_compra]) %>
+      <%= f.input :precio_venta %>
+      <%= error_span(@inventario[:precio_venta]) %>
+      </br>
+      <%= f.collection_radio_buttons :entrada_salida, [['E', 'Entrada'],['S', 'Salida']], :first, :last  %>
+      </br>
+      <%= error_span(@inventario[:entrada_salida]) %>
+    
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                    inventarios_path, :class => 'btn btn-danger' %>
+    <% end %>
+</div>
