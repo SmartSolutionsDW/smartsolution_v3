@@ -1,11 +1,16 @@
 <%= simple_form_for @reserva_cli,:url => reservaclicreate_path, :method => :post, :html => { :class => 'form-horizontal' } do |f| %>
 
-  <%= f.association :sala, label_method: :descripcion, value_method: :id, include_blank: false %>
-  <%= error_span(@reserva_cli[:sala]) %>
-  
-  <%= f.collection_select :local_id, Local.order(:id), :id, :No_Local, include_blank: true%>
-  <%= f.grouped_collection_select :sala_id, Local.order(:id), :id, :descripcion, include_blank: true%>
-  
+
+  <div class="input select required reserva_local">
+    <label class="select required control-label" for="reserva_local_id">
+      <abbr title="required">*</abbr> Local</label>
+      <%= f.collection_select :local_id, Local.order(:No_Local), :id, :No_Local, include_blank: false ,:input_html => { :class => 'chosen'} %>
+  </div>
+  <div class="input select required reserva_sala">
+    <label class="select required control-label" for="reserva_sala_id">
+      <abbr title="required">*</abbr> Sala</label>
+          <%= f.grouped_collection_select :sala_id, Local.order(:No_Local), :sala, :No_Local, :id, :descripcion, include_blank: false%>
+      </div>
   <%= f.input :fe_reserva %>
   <%= error_span(@reserva_cli[:fe_reserva]) %>
   <%= f.input :descripcion %>

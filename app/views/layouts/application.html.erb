@@ -74,6 +74,7 @@
                      <% if current_user.admin == true %>
                         <li><%= link_to 'Administrar Usuarios', rails_admin.dashboard_path %></li> 
                       <% end %>
+                    <li><%= link_to 'Reserva', reservacli_path %></li> 
                     <li role="separator" class="divider"></li>
                     <li><%= link_to 'Cerrar Sessión', destroy_user_session_path, :method => 'DELETE' %></a></li>
                   </ul>

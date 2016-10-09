@@ -63,7 +63,7 @@ class EmployeesController < ApplicationController
     self.validar_admin
     #@employee.destroy
     logger.debug "<<<<< eliminando empleado >>>>>"
-    if(@employee['id']!=3)
+    if(@employee['id']!=6)
       @employee.destroy
       respond_to do |format|
         format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
