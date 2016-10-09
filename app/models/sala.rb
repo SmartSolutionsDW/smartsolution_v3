@@ -4,7 +4,7 @@ class Sala < ActiveRecord::Base
   validates :local, presence: true
    def local_name
       self.local.No_Local
-  end
+   end
   validates :no_sala, presence: true, 
                     uniqueness: {case_sensitive: false}
                     
