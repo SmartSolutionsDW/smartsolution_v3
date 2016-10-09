@@ -25,7 +25,7 @@
         <td><%= reserva.fe_reserva %></td>
         <td><%= reserva.descripcion %></td>
         <td><%= reserva.estado %></td>
-        <td><%= reserva.aprobado == '1' ? 'Aprobado' :'Des-aprobado' %></td>
+        <td><%= reserva.aprobado == true ? 'Aprobado' :'Des-aprobado' %></td>
         <td><%=l reserva.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
