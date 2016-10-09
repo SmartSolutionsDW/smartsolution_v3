@@ -18,7 +18,7 @@
     <% @productos.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.tipo_producto_id %></td>
+        <td><%= producto.tipo_producto_name %></td>
         <td><%= producto.name %></td>
         <td><%= producto.price %></td>
         <td><%= producto.estado == '1' ? 'Activo' :'Inactivo' %></td>
